@@ -1,0 +1,368 @@
+[
+ {
+  "id": "fighter_pdr",
+  "cls": "Fighter",
+  "name": "Full-PDR Fighter",
+  "desc": "Plate + shield tank. Stacks armor rating, PDR and health; wins by not dying.",
+  "weapons": [
+   "Longsword",
+   "ArmingSword",
+   "Falchion",
+   "VikingSword"
+  ],
+  "offhand": [
+   "HeaterShield",
+   "RoundShield"
+  ],
+  "armor": [
+   "Plate"
+  ],
+  "priority": {
+   "ArmorRating": 4,
+   "ArmorRatingAdd": 4,
+   "PhysicalDamageReduction": 5,
+   "ProjectileReductionMod": 3,
+   "MaxHealthAdd": 3,
+   "MaxHealthBonus": 3,
+   "Vigor": 3,
+   "Strength": 2,
+   "Primitive": 2,
+   "MagicRegistance": 1.5,
+   "HeadshotReductionMod": 2,
+   "WeaponDamage": 1,
+   "MoveSpeed": 0.5
+  },
+  "buffs": [
+   "DefenseMastery"
+  ]
+ },
+ {
+  "id": "fighter_dmg",
+  "cls": "Fighter",
+  "name": "Damage Fighter (Zwei / Longsword)",
+  "desc": "Two-hander pressure. Physical power bonus, additional damage and true damage.",
+  "weapons": [
+   "Zweihander",
+   "Longsword",
+   "Halberd"
+  ],
+  "armor": [
+   "Plate",
+   "Chain"
+  ],
+  "priority": {
+   "WeaponDamage": 4,
+   "PhysicalDamageBonus": 5,
+   "PhysicalDamageAdd": 5,
+   "PhysicalWeaponDamageAdd": 4,
+   "PhysicalDamageTrue": 4,
+   "ArmorPenetration": 3,
+   "Strength": 3,
+   "PhysicalPower": 3,
+   "Primitive": 2,
+   "ActionSpeed": 2,
+   "MaxHealthAdd": 1.5,
+   "Vigor": 1.5,
+   "ArmorRating": 1
+  },
+  "buffs": [
+   "ComboAttack"
+  ]
+ },
+ {
+  "id": "barb_zerker",
+  "cls": "Barbarian",
+  "name": "Berserker Barbarian",
+  "desc": "Big axe, big health pool, all-in physical damage.",
+  "weapons": [
+   "Zweihander",
+   "FellingAxe",
+   "DoubleAxe",
+   "BattleAxe"
+  ],
+  "armor": [
+   "Plate",
+   "Chain",
+   "Leather"
+  ],
+  "priority": {
+   "WeaponDamage": 4,
+   "PhysicalDamageBonus": 5,
+   "PhysicalDamageAdd": 5,
+   "PhysicalWeaponDamageAdd": 4,
+   "PhysicalDamageTrue": 4,
+   "Strength": 3,
+   "Vigor": 3,
+   "MaxHealthAdd": 3,
+   "MaxHealthBonus": 3,
+   "Primitive": 2,
+   "ArmorPenetration": 2,
+   "ActionSpeed": 1.5
+  },
+  "buffs": [
+   "Robust"
+  ]
+ },
+ {
+  "id": "rogue_dagger",
+  "cls": "Rogue",
+  "name": "Dagger Rogue",
+  "desc": "Fast, light, backstab-focused. Move speed, action speed and additional damage.",
+  "weapons": [
+   "RondelDagger",
+   "KrisDagger",
+   "StilettoDagger",
+   "CastillonDagger",
+   "Rapier"
+  ],
+  "offhand": [
+   "RondelDagger",
+   "CastillonDagger"
+  ],
+  "armor": [
+   "Leather",
+   "Cloth"
+  ],
+  "priority": {
+   "WeaponDamage": 3,
+   "PhysicalDamageAdd": 5,
+   "PhysicalDamageBonus": 4,
+   "PhysicalWeaponDamageAdd": 4,
+   "PhysicalDamageTrue": 4,
+   "MoveSpeed": 3,
+   "MoveSpeedAdd": 3,
+   "MoveSpeedBonus": 3,
+   "ActionSpeed": 3,
+   "Agility": 2.5,
+   "Dexterity": 2.5,
+   "ArmorPenetration": 3,
+   "Primitive": 2
+  },
+  "buffs": []
+ },
+ {
+  "id": "ranger_bow",
+  "cls": "Ranger",
+  "name": "Longbow Ranger",
+  "desc": "Range and headshots. Additional physical damage and weapon damage scale every arrow.",
+  "weapons": [
+   "Longbow",
+   "RecurveBow",
+   "SurvivalBow",
+   "WindlassCrossbow"
+  ],
+  "armor": [
+   "Leather",
+   "Chain"
+  ],
+  "priority": {
+   "WeaponDamage": 4,
+   "PhysicalDamageAdd": 5,
+   "PhysicalDamageBonus": 4,
+   "PhysicalWeaponDamageAdd": 4,
+   "PhysicalDamageTrue": 4,
+   "HeadshotDamageMod": 4,
+   "ArmorPenetration": 3,
+   "Dexterity": 2.5,
+   "Agility": 2,
+   "ActionSpeed": 2,
+   "Primitive": 2,
+   "MoveSpeed": 1
+  },
+  "buffs": []
+ },
+ {
+  "id": "cleric_battle",
+  "cls": "Cleric",
+  "name": "Battle Cleric (Mace)",
+  "desc": "Plate + mace + shield. Blunt Weapon Mastery, tanky, still heals.",
+  "weapons": [
+   "FlangedMace",
+   "MorningStar",
+   "WarHammer"
+  ],
+  "offhand": [
+   "HeaterShield",
+   "RoundShield"
+  ],
+  "armor": [
+   "Plate",
+   "Chain"
+  ],
+  "priority": {
+   "WeaponDamage": 3,
+   "PhysicalDamageBonus": 4,
+   "PhysicalDamageAdd": 4,
+   "PhysicalWeaponDamageAdd": 3,
+   "Strength": 3,
+   "Will": 2.5,
+   "Vigor": 2.5,
+   "MaxHealthAdd": 2.5,
+   "ArmorRating": 3,
+   "ArmorRatingAdd": 3,
+   "PhysicalDamageReduction": 3,
+   "Primitive": 2,
+   "MagicRegistance": 1
+  },
+  "buffs": [
+   "BluntWeaponMastery"
+  ]
+ },
+ {
+  "id": "warlock_demon",
+  "cls": "Warlock",
+  "name": "Demon Lock (Blood Pact melee)",
+  "desc": "Demon Armor plate warlock that fights in Blood Pact form. Strength, Vigor, health.",
+  "weapons": [
+   "Falchion",
+   "Longsword",
+   "Zweihander",
+   "Halberd"
+  ],
+  "armor": [
+   "Plate",
+   "Chain"
+  ],
+  "ignoreClassRestriction": [
+   "Plate"
+  ],
+  "priority": {
+   "WeaponDamage": 3,
+   "PhysicalDamageBonus": 4,
+   "PhysicalDamageAdd": 4,
+   "PhysicalWeaponDamageAdd": 3,
+   "Strength": 3,
+   "Vigor": 3,
+   "MaxHealthAdd": 3,
+   "MaxHealthBonus": 2.5,
+   "Will": 2,
+   "MagicRegistance": 2,
+   "Primitive": 2,
+   "ArmorRating": 1.5
+  },
+  "buffs": [
+   "BloodPact"
+  ]
+ },
+ {
+  "id": "wizard_fire",
+  "cls": "Wizard",
+  "name": "Fireball Wizard",
+  "desc": "Cloth caster. Magical power bonus, additional magical damage, Knowledge for cast speed.",
+  "weapons": [
+   "WizardStaff",
+   "CrystalBall",
+   "Spellbook",
+   "CeremonialStaff"
+  ],
+  "armor": [
+   "Cloth"
+  ],
+  "priority": {
+   "MagicalDamageBonus": 5,
+   "MagicalDamageAdd": 5,
+   "MagicalPower": 4,
+   "MagicalDamageTrue": 4,
+   "Knowledge": 3,
+   "Will": 3,
+   "SpellCastingSpeed": 3,
+   "MagicPenetration": 3,
+   "Primitive": 2,
+   "MemoryCapacityAdd": 1,
+   "WeaponDamage": 1
+  },
+  "buffs": []
+ },
+ {
+  "id": "sorc_elemental",
+  "cls": "Sorcerer",
+  "name": "Elemental Sorcerer",
+  "desc": "Will/Knowledge caster, magical damage stacking.",
+  "weapons": [
+   "CrystalBall",
+   "WizardStaff",
+   "Spellbook",
+   "CrystalSword"
+  ],
+  "armor": [
+   "Cloth",
+   "Leather"
+  ],
+  "priority": {
+   "MagicalDamageBonus": 5,
+   "MagicalDamageAdd": 5,
+   "MagicalPower": 4,
+   "MagicalDamageTrue": 4,
+   "Will": 3,
+   "Knowledge": 3,
+   "SpellCastingSpeed": 3,
+   "MagicPenetration": 3,
+   "Primitive": 2
+  },
+  "buffs": []
+ },
+ {
+  "id": "bard_rapier",
+  "cls": "Bard",
+  "name": "Rapier Bard",
+  "desc": "Rapier + buckler skirmisher with songs.",
+  "weapons": [
+   "Rapier",
+   "ArmingSword",
+   "Falchion"
+  ],
+  "offhand": [
+   "Buckler",
+   "LanternShield"
+  ],
+  "armor": [
+   "Leather",
+   "Chain",
+   "Cloth"
+  ],
+  "priority": {
+   "WeaponDamage": 3,
+   "PhysicalDamageAdd": 4,
+   "PhysicalDamageBonus": 4,
+   "PhysicalWeaponDamageAdd": 3,
+   "Dexterity": 2.5,
+   "Agility": 2,
+   "Resourcefulness": 2,
+   "ActionSpeed": 2,
+   "MoveSpeed": 2,
+   "Primitive": 2,
+   "Persuasiveness": 1
+  },
+  "buffs": [
+   "BalladOfCourage_Perfect"
+  ]
+ },
+ {
+  "id": "druid_hybrid",
+  "cls": "Druid",
+  "name": "Shapeshift Druid",
+  "desc": "Hybrid druid: health, strength and will.",
+  "weapons": [
+   "Quarterstaff",
+   "Spear",
+   "WizardStaff"
+  ],
+  "armor": [
+   "Leather",
+   "Cloth"
+  ],
+  "priority": {
+   "MaxHealthAdd": 3,
+   "Vigor": 3,
+   "Strength": 2.5,
+   "Will": 2.5,
+   "PhysicalDamageBonus": 3,
+   "PhysicalDamageAdd": 3,
+   "MagicalDamageBonus": 2,
+   "Primitive": 2,
+   "ArmorRating": 1.5,
+   "MoveSpeed": 1
+  },
+  "buffs": []
+ }
+]

@@ -1,0 +1,10 @@
+.git
+.env
+.env.*
+data/raw
+data/wiki
+data/builds
+data/changelogs
+tools
+sim/target
+sim/crates/dad-web/dist

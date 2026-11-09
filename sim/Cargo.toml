@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = ["crates/dad-core", "crates/dad-web"]
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1

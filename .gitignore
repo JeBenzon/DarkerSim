@@ -1,0 +1,32 @@
+# secrets
+.env
+.env.*
+
+# game data: everything extracted from Dark and Darker or copied from the wiki.
+# It is generated locally by scripts/update.ps1 and must NEVER be committed to this repo.
+app/data/
+data/icons/
+data/wiki/
+data/builds/
+data/changelogs/
+data/raw/
+*.webp
+*.png
+!docs/screenshot.png
+tools/CUE4Parse/
+tools/mappings/
+tools/dl/
+tools/bin/
+
+# build output
+sim/target/
+sim/crates/dad-web/dist/
+**/bin/
+**/obj/
+
+# editor / OS
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

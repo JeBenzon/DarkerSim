@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Darker Companion</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="sigil">&#x2694;</span>
+    <div>
+      <h1>Darker Companion</h1>
+      <p id="buildInfo" class="muted">loading…</p>
+    </div>
+  </div>
+  <nav id="tabs">
+    <button data-tab="loadout" class="active">Loadout</button>
+    <button data-tab="damage">Damage Bench</button>
+    <button data-tab="scaling">Scaling</button>
+    <button data-tab="items">Items</button>
+    <button data-tab="crafting">Crafting</button>
+    <button data-tab="changes">Patch Changes</button>
+    <button data-tab="data">Data</button>
+  </nav>
+</header>
+
+<main>
+  <!-- LOADOUT -->
+  <section id="tab-loadout" class="tab active">
+    <div class="loadout-grid">
+      <div class="panel">
+        <div class="row">
+          <label>Class <select id="classSel"></select></label>
+          <label>Rolls <select id="rollSel">
+            <option value="max">Max roll</option><option value="avg">Average</option><option value="min">Min roll</option>
+          </select></label>
+          <label class="check"><input type="checkbox" id="classOnly" checked> Only gear my class can use</label>
+          <button id="resetLoadout" class="ghost">Clear gear</button>
+        </div>
+        <div id="slots"></div>
+        <details class="panel inner">
+          <summary>Temporary buffs / other sources (perks, potions…)</summary>
+          <p class="muted small">Add any flat stat the calculator doesn't know about. Values in the same units as tooltips (percent stats as %).</p>
+          <div id="extraRows"></div>
+          <button id="addExtra" class="ghost">+ Add stat</button>
+        </details>
+      </div>
+      <div class="panel sheet">
+        <h2>Character sheet</h2>
+        <div id="attrSheet" class="attr-grid"></div>
+        <div id="statSheet"></div>
+        <h3>What does +1 attribute buy you right now?</h3>
+        <p class="muted small">Marginal value at your current totals. Curves have breakpoints, so this changes as you stack.</p>
+        <div id="marginal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAMAGE -->
+  <section id="tab-damage" class="tab">
+    <div class="loadout-grid">
+      <div class="panel">
+        <h2>Attacker</h2>
+        <p class="muted small">Uses the weapon and stats from your Loadout tab.</p>
+        <div class="row">
+          <label>Weapon <select id="dmgWeapon"></select></label>
+          <label>Impact zone <select id="dmgZone"></select></label>
+        </div>
+        <div class="row">
+          <label>Buff weapon damage <input type="number" id="dmgBuff" value="0" step="1"></label>
+          <label>Extra penetration % <input type="number" id="dmgPen" value="0" step="0.5"></label>
+        </div>
+        <h2>Target</h2>
+        <div class="row">
+          <label>Preset <select id="tgtPreset"></select></label>
+        </div>
+        <div class="row">
+          <label>Armor rating <input type="number" id="tgtAR" value="50"></label>
+          <label>Magic resist <input type="number" id="tgtMR" value="50"></label>
+          <label>Extra phys. DR % <input type="number" id="tgtPDR" value="0" step="0.5"></label>
+          <label>Projectile DR % <input type="number" id="tgtProj" value="0" step="0.5"></label>
+          <label>Headshot DR % <input type="number" id="tgtHS" value="0" step="0.5"></label>
+        </div>
+        <details class="formula">
+          <summary>Formula used</summary>
+<pre>(((Base + Buff) × Combo × ImpactZone + Gear Weapon Dmg) × (1 + Power Bonus)
+   + Additional Damage)
+ × HitLocation × (1 − DR × (1 − Pen)) × (1 − Projectile DR)
+ + True Damage</pre>
+          <p class="muted small">Hit location multipliers come from game constants (<code>Hitbox_*</code>). DR comes from the game's armor-rating curve. The formula structure follows the community wiki's Damage page.</p>
+        </details>
+      </div>
+      <div class="panel">
+        <h2>Damage per hit</h2>
+        <div id="dmgTable"></div>
+        <div id="dmgNotes" class="muted small"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCALING -->
+  <section id="tab-scaling" class="tab">
+    <div class="scaling-grid">
+      <div class="panel list" id="curveList"></div>
+      <div class="panel">
+        <h2 id="curveTitle"></h2>
+        <p id="curveDesc" class="muted"></p>
+        <div id="curveChart"></div>
+        <h3>Breakpoints (from game files)</h3>
+        <div id="curveSegments"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITEMS -->
+  <section id="tab-items" class="tab">
+    <div class="items-grid">
+      <div class="panel list">
+        <input type="search" id="itemSearch" placeholder="Search items…">
+        <div class="row">
+          <select id="itemType"><option value="">All types</option></select>
+          <select id="itemSlot"><option value="">All slots</option></select>
+          <select id="itemClass"><option value="">All classes</option></select>
+        </div>
+        <div id="itemCount" class="muted small"></div>
+        <div id="itemList"></div>
+      </div>
+      <div class="panel" id="itemDetail"><p class="muted">Pick an item.</p></div>
+    </div>
+  </section>
+
+  <!-- CRAFTING -->
+  <section id="tab-crafting" class="tab">
+    <div class="items-grid">
+      <div class="panel list">
+        <input type="search" id="craftSearch" placeholder="Search craftable items…">
+        <select id="craftMerchant"><option value="">All merchants</option></select>
+        <div id="craftList"></div>
+      </div>
+      <div class="panel" id="craftDetail"><p class="muted">Pick a recipe to see the full material tree.</p></div>
+    </div>
+  </section>
+
+  <!-- CHANGES -->
+  <section id="tab-changes" class="tab"><div class="panel" id="changes"></div></section>
+
+  <!-- DATA -->
+  <section id="tab-data" class="tab"><div class="panel" id="dataInfo"></div></section>
+</main>
+
+<script src="data/game.js"></script>
+<script>window.DAD_CHANGELOG = window.DAD_CHANGELOG || null;</script>
+<script src="data/changelog.js" onerror="void 0"></script>
+<script src="app.js"></script>
+</body>
+</html>
